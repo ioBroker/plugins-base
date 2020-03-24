@@ -1,0 +1,32 @@
+{
+    "name": "@iobroker/plugin-base",
+    "version": "0.0.1",
+    "description": "Base module for plugins for js-controller and adapters",
+    "author": {
+        "name": "Ingo Fischer",
+        "email": "iobroker@fischer-ka.de"
+    },
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ioBroker/plugin-base.git"
+    },
+    "keywords": [
+        "iobroker",
+        "adapter",
+        "plugins"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ioBroker/plugin-base/issues"
+    },
+    "homepage": "https://github.com/ioBroker/plugin-base#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "^13.9.3",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2"
+    }
+}
