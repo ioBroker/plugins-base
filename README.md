@@ -12,7 +12,7 @@ Plugins are no adapters and so have - by definition - a limited featureset and a
 * The plugin needs to implement the following methods:
   * constructor to pass the settings to the parent object, required
   * "init" method is called to initialize the plugin, required
-  * "destroy" method is called before adapter/js-controller is stopped and should cleanup all needed resources, optional
+  * "destroy" method is called before adapter/js-controller is stopped and should cleanup all needed resources, optional. If plugin is not able to be deactivated on the fly it needs to return false.
 * The plugin always have an "enabled" flag where the user defines if the plugin should be executed or not. This flag is respected.
 * Plugins can also interact with objects and states but very limited. The following Methods are available:
   * getState
