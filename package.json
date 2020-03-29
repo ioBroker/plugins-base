@@ -7,6 +7,7 @@
         "email": "iobroker@fischer-ka.de"
     },
     "main": "index.js",
+    "types": "index.d.ts",
     "scripts": {
         "prebuild": "rimraf lib/!(types).d.ts",
         "build": "tsc"
