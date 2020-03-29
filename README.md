@@ -88,5 +88,8 @@ One example is the Sentry plugin available at https://github.com/ioBroker/plugin
 
 ## Changelog
 
+### 0.1.1 (2020-03-29)
+* (AlCalzone) add type support and optimizations
+
 ### 0.1.0 (2020-03-28)
 * (Apollon77) initial release to npm
