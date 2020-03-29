@@ -7,7 +7,11 @@
         "email": "iobroker@fischer-ka.de"
     },
     "main": "index.js",
-    "scripts": {},
+    "types": "index.d.ts",
+    "scripts": {
+        "prebuild": "rimraf lib/!(types).d.ts",
+        "build": "tsc"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ioBroker/plugin-base.git"
@@ -24,9 +28,12 @@
     "homepage": "https://github.com/ioBroker/plugin-base#readme",
     "dependencies": {},
     "devDependencies": {
+        "@types/iobroker": "^2.2.1",
         "@types/node": "^13.9.5",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.1",
-        "eslint-plugin-prettier": "^3.1.2"
+        "eslint-plugin-prettier": "^3.1.2",
+        "rimraf": "^3.0.2",
+        "typescript": "^3.8.3"
     }
 }
