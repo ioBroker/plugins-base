@@ -1,6 +1,6 @@
 {
     "name": "@iobroker/plugin-base",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "description": "Base module for plugins for js-controller and adapters",
     "author": {
         "name": "Ingo Fischer",

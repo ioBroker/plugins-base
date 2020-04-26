@@ -88,6 +88,9 @@ One example is the Sentry plugin available at https://github.com/ioBroker/plugin
 
 ## Changelog
 
+### 1.0.0 (2020-04-26)
+* (Apollon77) Declare as 1.0.0 for release of js-controller 3.0
+
 ### 0.1.1 (2020-03-29)
 * (AlCalzone) add type support and optimizations
 
