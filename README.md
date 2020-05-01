@@ -88,6 +88,9 @@ One example is the Sentry plugin available at https://github.com/ioBroker/plugin
 
 ## Changelog
 
+### 1.1.0 (2020-05-01)
+* (Apollon77) Check host sentry plugin status when no adapter flag exists to allow users to turn it of more easy
+
 ### 1.0.0 (2020-04-26)
 * (Apollon77) Declare as 1.0.0 for release of js-controller 3.0
 
