@@ -88,6 +88,9 @@ One example is the Sentry plugin available at https://github.com/ioBroker/plugin
 
 ## Changelog
 
+### 1.1.1 (2020-05-01)
+* (Apollon77) fix for host lookup to work for all plugins 
+
 ### 1.1.0 (2020-05-01)
 * (Apollon77) Check host sentry plugin status when no adapter flag exists to allow users to turn it of more easy
 
