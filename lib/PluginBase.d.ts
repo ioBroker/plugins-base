@@ -16,8 +16,8 @@ declare class PluginBase {
     log: import("./NamespaceLogger");
     iobrokerConfig: Record<string, any>;
     parentPackage: Record<string, any>;
-    objectsDb: object | null;
-    statesDb: object | null;
+    objectsDb: any;
+    statesDb: any;
     isActive: boolean;
     SCOPES: {
         ADAPTER: string;
@@ -77,7 +77,7 @@ declare class PluginBase {
     /**
      * set The Active flag for the plugin
      *
-     * @param active {boolean} true/false if active
+     * @param {boolean} active true/false if active
      */
     setActive(active: boolean): void;
     /**
@@ -85,18 +85,18 @@ declare class PluginBase {
      * This method is called by js-controller/adapter process internally when initializing the plugin.
      *
      * @private
-     * @param objectsDb {object} objects DB instance
-     * @param statesDb {object} states DB instance
+     * @param {any} objectsDb objects DB instance
+     * @param {any} statesDb states DB instance
      */
     private setDatabase;
     /**
      * Initialize plugin, internal method
      *
      * @private
-     * @param pluginConfig {object} plugin configuration from config files
-     * @param parentConfig {object} io-package from parent module where plugin is used in
-     * @param callback {function} callback when done, signature "(err, initSuccessful)". On err or initSuccessful===false the plugin instance will be discarded
+     * @param {Record<string, any>} pluginConfig plugin configuration from config files
+     * @param {Record<string, any>} parentConfig io-package from parent module where plugin is used in
+     * @param {import("@iobroker/plugin-base/types").InitCallback} callback Will be called when done. On err or `initSuccessful === false` the plugin instance will be discarded.
      */
     private initPlugin;
-    parentIoPackage: object | undefined;
+    parentIoPackage: Record<string, any> | undefined;
 }
