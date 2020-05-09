@@ -37,7 +37,7 @@ declare module "@iobroker/plugin-base/types" {
 	}
 
 	export type InitCallback = (
-		err: Error | string | null | undefined,
+		err: Error | null | undefined,
 		initSuccessful?: boolean
 	) => void;
 }
