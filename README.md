@@ -88,6 +88,10 @@ One example is the Sentry plugin available at https://github.com/ioBroker/plugin
 
 ## Changelog
 
+### 1.2.0 (2020-05-09)
+* (Apollon77) Add async methods for Objects and States
+* (Apollon77) rework enable detection for plugins
+
 ### 1.1.1 (2020-05-01)
 * (Apollon77) fix for host lookup to work for all plugins 
 
