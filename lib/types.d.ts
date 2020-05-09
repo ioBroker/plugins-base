@@ -20,6 +20,8 @@ declare module "@iobroker/plugin-base/types" {
 	export interface PluginSettings {
 		/** The scope in which the plugin will be executed */
 		pluginScope: "adapter" | "controller";
+		/** The object namespace for the parent of the plugin, e.g. `system.adapter.<adaptername>.0`, or `system.host.<hostname>.` */
+		parentNamespace: string;
 		/** The object namespace for the plugin, e.g. `system.adapter.<adaptername>.0.plugins.name`, or `system.host.<hostname>.plugins.name` */
 		pluginNamespace: string;
 		/** The namespace which will be used for logging */
@@ -35,7 +37,7 @@ declare module "@iobroker/plugin-base/types" {
 	}
 
 	export type InitCallback = (
-		err: string | null | undefined,
+		err: Error | string | null | undefined,
 		initSuccessful?: boolean
 	) => void;
 }

@@ -12,6 +12,7 @@ declare class PluginBase {
      */
     constructor(settings: import("@iobroker/plugin-base/types").PluginSettings);
     pluginScope: "adapter" | "controller";
+    parentNamespace: string;
     pluginNamespace: string;
     log: import("./NamespaceLogger");
     iobrokerConfig: Record<string, any>;
