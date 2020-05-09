@@ -6,11 +6,15 @@
         "name": "Ingo Fischer",
         "email": "iobroker@fischer-ka.de"
     },
+    "contributors": [
+        "Al Calzone <d.griesel@gmx.net>"
+    ],
     "main": "index.js",
     "types": "index.d.ts",
     "scripts": {
         "prebuild": "rimraf lib/!(types).d.ts",
-        "build": "tsc"
+        "build": "tsc -p tsconfig.build.json",
+        "prepublishOnly": "npm run build"
     },
     "repository": {
         "type": "git",

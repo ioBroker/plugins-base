@@ -1,77 +1,74 @@
+/// <reference path="types.d.ts" />
 export = PluginHandler;
 /**
  * Base handler for ioBroker Plugins
  */
 declare class PluginHandler {
     /**
-     * Constructore for PluginHandler
+     * Constructor for PluginHandler
      *
-     * @param settings {object} object with configuration:
-     *                  {
-     *                      scope: 'adapter', // or 'controller'
-     *                      namespace: 'system.adapter.myname.0.plugins.name', // or 'system.host.name.plugins.name'
-     *                      logNamespace: 'myname.0',
-     *                      log: {...}, // logger object
-     *                      iobrokerConfig: {...}, // ioBroker configuration
-     *                      parentPackage: {...} // package.json from "parent" which uses the plugin (adapter/controller)
-     *                  }
+     * @param {import("@iobroker/plugin-base/types").PluginHandlerSettings} settings
      */
-    constructor(settings: object);
-    settings: object;
+    constructor(settings: import("@iobroker/plugin-base/types").PluginHandlerSettings);
+    settings: import("@iobroker/plugin-base/types").PluginHandlerSettings;
     log: import("./NamespaceLogger");
-    plugins: {};
+    /** @type {Record<string, {config: Record<string, any>, instance?: import("./PluginBase") | null}>} */
+    plugins: Record<string, {
+        config: Record<string, any>;
+        instance?: import("./PluginBase") | null;
+    }>;
     /**
      * Add plugins to the handler, resolve and require the plugin code and create instance
      *
-     * @param configs {object} object with keys for plugin names and their configuration
-     * @param resolveDirs {array|string} Resolve Directories for plugins
+     * @param {Record<string, any>} configs object with keys for plugin names and their configuration
+     * @param {string | string[]} resolveDirs Resolve directories for plugins
      */
-    addPlugins(configs: object, resolveDirs: any): void;
+    addPlugins(configs: Record<string, any>, resolveDirs: string | string[]): void;
     /**
      * Resole, Require and Instanciate Plugins
      *
-     * @param name {string} name of the plugin
-     * @param config {object} plugin configuration
-     * @param resolveDirs {string|Array} Resolve directories
+     * @param {string} name name of the plugin
+     * @param {Record<string, any>} config plugin configuration
+     * @param {string | string[]} resolveDirs Resolve directories
      */
-    instanciatePlugin(name: string, config: object, resolveDirs: string | any[]): void;
+    instanciatePlugin(name: string, config: Record<string, any>, resolveDirs: string | string[]): void;
     /**
      * Set Objects and States databases for all isActive plugins
      *
-     * @param name {object} name of the plugin
-     * @param objectsDb {object} Objects DB instance
-     * @param statesDb {object} States DB instance
+     * @param {string} name name of the plugin
+     * @param {any} objectsDb objects DB instance
+     * @param {any} statesDb states DB instance
      */
-    setDatabaseForPlugin(name: object, objectsDb: object, statesDb: object): void;
+    setDatabaseForPlugin(name: string, objectsDb: any, statesDb: any): void;
     /**
      * Set Objects and States databases for all isActive plugins
      *
-     * @param objectsDb {object} Objects DB instance
-     * @param statesDb {object} States DB instance
+     * @param {any} objectsDb objects DB instance
+     * @param {any} statesDb states DB instance
      */
-    setDatabaseForPlugins(objectsDb: object, statesDb: object): void;
+    setDatabaseForPlugins(objectsDb: any, statesDb: any): void;
     /**
      * Initialize one Plugins
      *
-     * @param name {string} name of the plugin
-     * @param parentConfig {object} io-package of the parent module that uses the plugins (adapter/controller)
-     * @param callback {function} callback function which is called after initialization is done for all plugins
+     * @param {string} name name of the plugin
+     * @param {Record<string, any>} parentConfig io-package of the parent module that uses the plugins (adapter/controller)
+     * @param {(error?: string) => void} [callback] callback function which is called after initialization is done for all plugins
      */
-    initPlugin(name: string, parentConfig: object, callback: Function): void;
+    initPlugin(name: string, parentConfig: Record<string, any>, callback?: (error?: string) => void): void;
     /**
      * Initialize all Plugins that are registered
      *
-     * @param parentConfig {object} io-package of the parent module that uses the plugins (adapter/controller)
-     * @param callback {function} callback function which is called after initialization is done for all plugins
+     * @param {Record<string, any>} parentConfig io-package of the parent module that uses the plugins (adapter/controller)
+     * @param {(error?: string) => void} callback callback function which is called after initialization is done for all plugins
      */
-    initPlugins(parentConfig: object, callback: Function): void;
+    initPlugins(parentConfig: Record<string, any>, callback: (error?: string) => void): void;
     /**
      * Destroy one plugin instance
      *
-     * @param name {string} name of the plugin to destroy
-     * @param force {boolean} optional true to consider plugin as destroyed also if false is returned from plugin
+     * @param {string} name name of the plugin to destroy
+     * @param {boolean} [force] true to consider plugin as destroyed also if false is returned from plugin
      */
-    destroy(name: string, force: boolean): boolean;
+    destroy(name: string, force?: boolean): boolean;
     /**
      * Destroy all plugin instances
      */
@@ -79,35 +76,35 @@ declare class PluginHandler {
     /**
      * Return plugin instance
      *
-     * @param name {string} name of the plugin to return
-     * @returns {object} plugin instance or null if not existent or not isActive
+     * @param {string} name name of the plugin to return
+     * @returns {import("./PluginBase") | null} plugin instance or null if not existent or not isActive
      */
-    getPluginInstance(name: string): object;
+    getPluginInstance(name: string): import("./PluginBase");
     /**
      * Return plugin configuration
      *
-     * @param name {string} name of the plugin to return
-     * @returns {object} plugin configuration or null if not existent or not isActive
+     * @param {string} name name of the plugin to return
+     * @returns {Record<string, any> | null} plugin configuration or null if not existent or not isActive
      */
-    getPluginConfig(name: string): object;
+    getPluginConfig(name: string): Record<string, any>;
     /**
      * Return if plugin exists
      *
-     * @param name {string} name of the plugin to check
+     * @param {string} name name of the plugin to check
      * @returns {boolean} true/false if plugin was configured somewhere
      */
     pluginExists(name: string): boolean;
     /**
      * Return if plugin is isActive
      *
-     * @param name {string} name of the plugin to check
+     * @param {string} name name of the plugin to check
      * @returns {boolean} true/false if plugin is successfully isActive
      */
     isPluginInstanciated(name: string): boolean;
     /**
      * Return if plugin is active
      *
-     * @param name {string} name of the plugin to check
+     * @param {string} name name of the plugin to check
      * @returns {boolean} true/false if plugin is successfully isActive
      */
     isPluginActive(name: string): boolean;

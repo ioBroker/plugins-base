@@ -2,14 +2,29 @@ export = NamespaceLogger;
 declare class NamespaceLogger {
     /**
      * @param {string} namespaceLog Logging namespace to prefix
-     * @param {object} logger logger instance
+     * @param {ioBroker.Logger} logger logger instance
      */
-    constructor(namespaceLog: string, logger: object);
+    constructor(namespaceLog: string, logger: ioBroker.Logger);
     namespaceLog: string;
-    logger: object;
-    silly(msg: any): void;
-    debug(msg: any): void;
-    info(msg: any): void;
-    error(msg: any): void;
-    warn(msg: any): void;
+    logger: ioBroker.Logger;
+    /**
+     * @param {string} msg
+     */
+    silly(msg: string): void;
+    /**
+     * @param {string} msg
+     */
+    debug(msg: string): void;
+    /**
+     * @param {string} msg
+     */
+    info(msg: string): void;
+    /**
+     * @param {string} msg
+     */
+    error(msg: string): void;
+    /**
+     * @param {string} msg
+     */
+    warn(msg: string): void;
 }
