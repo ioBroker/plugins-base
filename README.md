@@ -88,6 +88,9 @@ One example is the Sentry plugin available at https://github.com/ioBroker/plugin
 
 ## Changelog
 
+### __WORK IN PROGRESS__
+* (Apollon77) Add error handling in some places when setting active Status
+
 ### 1.2.0 (2020-05-09)
 * (Apollon77) Add async methods for Objects and States
 * (Apollon77) rework enable detection for plugins
