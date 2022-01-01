@@ -36,7 +36,7 @@
     "@alcalzone/release-script": "^2.2.1",
     "@types/iobroker": "^3.3.4",
     "@types/node": "^16.11.11",
-    "eslint": "^7.32.0",
+    "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "rimraf": "^3.0.2",
