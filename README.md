@@ -87,7 +87,11 @@ The configuration here is enhanced by an "enabled" key and passed to the "init" 
 One example is the Sentry plugin available at https://github.com/ioBroker/plugin-sentry
 
 ## Changelog
-### 2.0.0 (2024-03-13)
+<!--
+	Placeholder for the next version (at the beginning of the line):
+	### **WORK IN PROGRESS**
+-->
+### 2.0.0 (2024-05-27)
 **Breaking Changes:**
 * (foxriver76) Methods no longer work with callback, please check the methods according to the types.
 * (foxriver76) All methods with `async` postfix are now working renamed to methods without the postfix
@@ -103,7 +107,7 @@ while the callback methods have been removed
 * (Apollon77) rework enable detection for plugins
 
 ### 1.1.1 (2020-05-01)
-* (Apollon77) fix for host lookup to work for all plugins 
+* (Apollon77) fix for host lookup to work for all plugins
 
 ### 1.1.0 (2020-05-01)
 * (Apollon77) Check host sentry plugin status when no adapter flag exists to allow users to turn it of more easy
