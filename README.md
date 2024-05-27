@@ -91,7 +91,7 @@ One example is the Sentry plugin available at https://github.com/ioBroker/plugin
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### 2.0.0 (2024-05-27)
+### 2.0.1 (2024-05-27)
 **Breaking Changes:**
 * (foxriver76) Methods no longer work with callback, please check the methods according to the types.
 * (foxriver76) All methods with `async` postfix are now working renamed to methods without the postfix
